@@ -20,8 +20,8 @@ module.exports = {
         use: [{
           loader: 'babel-loader',
           options: {
-            "presets": [ [ "@babel/preset-env" ] ],
-            "plugins": [ "@babel/plugin-transform-destructuring", "@babel/plugin-proposal-object-rest-spread", "@babel/plugin-transform-runtime" ]
+            "presets": [["@babel/preset-env"]],
+            "plugins": ["@babel/plugin-transform-destructuring", "@babel/plugin-proposal-object-rest-spread", "@babel/plugin-transform-runtime"]
           }
         }],
         exclude: /node_modules/,
@@ -68,7 +68,7 @@ if (process.env.NODE_ENV === 'development') {
     new webpack.NoEmitOnErrorsPlugin()
   ];
   module.exports.entry.push('webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000'); //?noInfo=true&quiet=true)
-  module.exports.module.rules[0].use.push({ loader: 'webpack-module-hot-accept' });
+  module.exports.module.rules[0].use.push({loader: 'webpack-module-hot-accept'});
 }
 
 if (process.env.NODE_ENV === 'production') {
@@ -78,12 +78,6 @@ if (process.env.NODE_ENV === 'production') {
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: '"production"'
-      }
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true,
-      compress: {
-        warnings: false
       }
     }),
     new webpack.LoaderOptionsPlugin({
