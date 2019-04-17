@@ -19,8 +19,8 @@ module.exports = {
         use: [{
           loader: 'babel-loader',
           options: {
-            "presets": [ [ "env" ] ],
-            "plugins": [ "transform-es2015-destructuring", "transform-object-rest-spread", "transform-runtime" ]
+            "presets": [ [ "@babel/preset-env" ] ],
+            "plugins": [ "@babel/plugin-transform-destructuring", "@babel/plugin-proposal-object-rest-spread", "@babel/plugin-transform-runtime" ]
           }
         }],
         exclude: /node_modules/,
